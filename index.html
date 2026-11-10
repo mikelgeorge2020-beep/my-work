@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مجاني من المجتهد: حصة تجريبية وويبينار</title>
+<style>
+:root{--bg:#f4efe3;--hero:#12301f;--hero-text:#ffffff;--card:#ffffff;--text:#1a2a20;--muted:#5d6b60;--gold:#f6c343;--gold-text:#1a2a20;--green:#16a34a;--border:#d9d2bf;--input:#ffffff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0c1511;--hero:#12301f;--card:#16241c;--text:#f2f5ee;--muted:#a6b5a9;--border:#2a3d31;--input:#0f1b15}}
+:root[data-theme="dark"]{--bg:#0c1511;--hero:#12301f;--card:#16241c;--text:#f2f5ee;--muted:#a6b5a9;--border:#2a3d31;--input:#0f1b15}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:"Segoe UI",Tahoma,"Noto Naskh Arabic",Arial,sans-serif;line-height:1.6}
+.wrap{max-width:480px;margin:0 auto;padding:0 0 90px}
+.hero{position:relative;background:var(--hero);color:var(--hero-text);text-align:center;padding:26px 16px 22px;border-radius:0 0 28px 28px}
+.badge{display:inline-block;background:var(--gold);color:var(--gold-text);font-weight:800;padding:4px 16px;border-radius:8px;transform:rotate(-2deg);font-size:18px}
+.big{font-size:56px;font-weight:900;line-height:1.1;margin:8px 0 0}
+.big span{color:var(--gold)}
+.hero h1{font-size:22px;margin:6px 0 8px}
+.hero p{margin:0;opacity:.9;font-size:15px}
+.spots{display:inline-block;margin-top:12px;background:#dc2626;color:#fff;font-weight:800;padding:5px 16px;border-radius:20px;font-size:15px}
+.tabs{display:flex;gap:8px;padding:16px}
+.tabs button{flex:1;padding:12px 6px;border:2px solid var(--border);border-radius:12px;background:var(--card);color:var(--text);font-size:15px;font-weight:700;font-family:inherit;cursor:pointer}
+.tabs button.on{background:var(--gold);color:var(--gold-text);border-color:var(--gold)}
+.card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:16px;margin:0 16px}
+.when{background:var(--hero);color:var(--hero-text);border-radius:12px;padding:12px;text-align:center;font-weight:700}
+.cd{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:10px;text-align:center}
+.cd div{background:var(--input);border:1px solid var(--border);border-radius:10px;padding:8px 2px}
+.cd b{display:block;font-size:22px}
+.cd small{color:var(--muted);font-size:12px}
+label{display:block;font-weight:600;margin:14px 0 6px}
+input,select{width:100%;padding:12px;font-size:16px;border:1px solid var(--border);border-radius:10px;background:var(--input);color:var(--text);font-family:inherit}
+.courses{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.courses button{padding:11px 6px;border:2px solid var(--border);border-radius:12px;background:var(--input);color:var(--text);font-size:15px;font-family:inherit;cursor:pointer}
+.courses button.on{background:var(--gold);color:var(--gold-text);border-color:var(--gold);font-weight:700}
+.courses small{display:block;font-size:12px;opacity:.85;font-weight:400}
+.send{width:100%;margin-top:18px;padding:14px;font-size:18px;font-weight:800;border:0;border-radius:12px;background:var(--green);color:#fff;cursor:pointer;font-family:inherit}
+.err{color:#dc2626;font-size:14px;margin-top:10px;min-height:20px;text-align:center}
+.note{font-size:13px;color:var(--muted);text-align:center;margin:14px 16px 0}
+h2{font-size:20px;margin:26px 16px 10px;text-align:center}
+.t{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin:0 16px 10px}
+.t p{margin:0 0 6px}
+.t span{color:var(--muted);font-size:14px}
+details{background:var(--card);border:1px solid var(--border);border-radius:12px;margin:0 16px 8px;padding:12px 14px}
+summary{font-weight:700;cursor:pointer}
+details p{margin:8px 0 0;color:var(--muted)}
+.wa{position:fixed;left:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:var(--green);color:#fff;text-decoration:none;font-weight:800;padding:12px 18px;border-radius:30px;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:5}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{padding:8px 14px;border:2px solid var(--border);border-radius:20px;background:var(--input);color:var(--text);font-size:14px;font-family:inherit;cursor:pointer}
+.chips button.on{background:var(--gold);color:var(--gold-text);border-color:var(--gold);font-weight:700}
+.ghost{width:100%;margin-top:12px;padding:10px;border:2px dashed var(--border);border-radius:12px;background:transparent;color:var(--text);font-size:15px;font-family:inherit;cursor:pointer}
+.sib{display:grid;grid-template-columns:2fr 1fr;gap:8px;margin-top:8px}
+.ok{background:#16a34a22;border:1px solid var(--green);border-radius:12px;padding:10px;margin-top:12px;text-align:center;font-weight:700}
+.share{display:block;width:calc(100% - 32px);margin:12px 16px 0;padding:12px;border:0;border-radius:12px;background:var(--hero);color:#fff;font-size:16px;font-weight:700;font-family:inherit;cursor:pointer}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 16px}
+.why div{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:12px 8px;text-align:center;font-size:14px;font-weight:600}
+.why b{display:block;font-size:26px;font-weight:400}
+.lang{position:absolute;top:12px;left:12px;background:transparent;border:1px solid rgba(255,255,255,.6);color:#fff;border-radius:16px;padding:3px 12px;font-size:13px;font-family:inherit;cursor:pointer}
+.vid{margin:0 16px;aspect-ratio:16/9;border-radius:14px;overflow:hidden;background:#000}
+.vid iframe{width:100%;height:100%;border:0}
+.gal{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 16px}
+.gal img{width:100%;border-radius:12px;border:1px solid var(--border)}
+.pk{border-inline-start:5px solid var(--gold)}
+.paybtn{display:inline-block;margin-top:8px;background:var(--green);color:#fff;text-decoration:none;font-weight:700;padding:8px 16px;border-radius:10px;border:0;font-family:inherit;font-size:15px;cursor:pointer}
+.hide{display:none!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="hero">
+    <button class="lang" id="langBtn" type="button">EN</button>
+    <div class="badge">مجاني 100%</div>
+    <div class="big">احجز <span>مكانك</span></div>
+    <h1>مع المجتهد، تعلّم بسهولة</h1>
+    <p>الأماكن محدودة، سجّل دلوقتي</p>
+    <div class="spots hide" id="spots"></div>
+  </div>
+
+  <div class="tabs">
+    <button type="button" id="tTrial" class="on">🎁 حصة تجريبية</button>
+    <button type="button" id="tWeb">🎤 ويبينار مجاني</button>
+  </div>
+
+  <div class="card" id="pTrial">
+    <div class="courses" id="kind">
+      <button type="button" class="on" data-k="lang">🌍 لغات وحساب ذهني</button>
+      <button type="button" data-k="school">📚 مواد دراسية</button>
+    </div>
+    <div id="boxLang">
+      <label>اختار الكورس</label>
+      <div class="courses" id="courses"></div>
+      <div id="lvWrap" class="hide">
+        <button class="ghost" id="lvBtn" type="button">📝 اختبار تحديد المستوى (اختياري)</button>
+        <div id="lvBox" class="hide"></div>
+      </div>
+    </div>
+    <div id="boxSchool" class="hide">
+      <label for="stg">المرحلة</label><select id="stg"></select>
+      <label for="grd">الصف</label><select id="grd"></select>
+      <div id="trkWrap" class="hide"><label for="trk">المسار</label><select id="trk"></select></div>
+      <label>المواد المطلوبة (تقدر تختار أكتر من مادة)</label>
+      <div class="chips" id="subs"></div>
+    </div>
+    <label for="n1">اسم الطالب</label>
+    <input id="n1" autocomplete="name" placeholder="الاسم بالكامل">
+    <label for="a1">السن</label>
+    <input id="a1" type="number" inputmode="numeric" min="3" max="80" placeholder="مثال: 10">
+    <div id="gradeWrap"><label for="g1">الصف الدراسي (اختياري)</label><select id="g1"></select></div>
+    <label for="p1">رقم الواتساب</label>
+    <input id="p1" type="tel" inputmode="tel" autocomplete="tel" placeholder="01XXXXXXXXX">
+    <label for="t1">أنسب وقت للحصة</label>
+    <select id="t1"><option>صباحًا</option><option>بعد الظهر</option><option>مساءً</option><option>أي وقت</option></select>
+    <div id="sibs"></div>
+    <button class="ghost" id="addSib" type="button">➕ أضف أخ أو أخت</button>
+    <div id="pkgWrap" class="hide"><label for="pk1">الباقة المفضلة</label><select id="pk1"></select></div>
+    <label for="src1">عرفتنا منين؟</label><select id="src1"></select>
+    <label for="cp">كود خصم (اختياري)</label><input id="cp" placeholder="لو معاك كود">
+    <div class="err" id="e1"></div>
+    <button class="send" id="s1" type="button">احجز حصتي المجانية 💬</button>
+    <div class="ok hide" id="ok1">تم تجهيز حجزك ✅ اضغط إرسال في واتساب وهنأكد معاك. لو واتساب ما اتفتحش ابعتلنا على الرقم مباشرة.</div>
+  </div>
+
+  <div class="card hide" id="pWeb">
+    <div class="when" id="webWhen"></div>
+    <div class="cd hide" id="cd">
+      <div><b id="cd_d">0</b><small>يوم</small></div>
+      <div><b id="cd_h">0</b><small>ساعة</small></div>
+      <div><b id="cd_m">0</b><small>دقيقة</small></div>
+      <div><b id="cd_s">0</b><small>ثانية</small></div>
+    </div>
+    <div style="text-align:center;font-weight:700;margin:12px 0 0" id="webTitle"></div>
+    <label for="n2">الاسم</label>
+    <input id="n2" autocomplete="name" placeholder="الاسم بالكامل">
+    <label for="p2">رقم الواتساب</label>
+    <input id="p2" type="tel" inputmode="tel" autocomplete="tel" placeholder="01XXXXXXXXX">
+    <label for="w2">أنا</label>
+    <select id="w2"><option>ولي أمر</option><option>طالب</option><option>مهتم بتعلم لغة</option></select>
+    <label for="src2">عرفتنا منين؟</label><select id="src2"></select>
+    <div class="err" id="e2"></div>
+    <button class="send" id="s2" type="button">سجّل في الويبينار 💬</button>
+    <div class="ok hide" id="ok2">تم تجهيز تسجيلك ✅ اضغط إرسال في واتساب وهنبعتلك رابط الويبينار.</div>
+  </div>
+
+  <p class="note">هتتحول لواتساب برسالة جاهزة بالبيانات، اضغط إرسال وهنأكد حجزك.</p>
+
+  <button class="share" id="shareBtn" type="button">📤 شارك الصفحة مع أصدقائك</button>
+  <div id="wSec" class="hide"><h2>ليه المجتهد؟</h2><div class="why" id="wList"></div></div>
+  <div id="vSec" class="hide"><h2>شوف الحصة</h2><div class="vid" id="vBox"></div></div>
+  <div id="thSec" class="hide"><h2>المدرسين</h2><div id="thList"></div></div>
+  <div id="pkSec" class="hide"><h2>الباقات والأسعار</h2><div id="pkList"></div></div>
+  <div id="paySec" class="hide"><h2>طرق الدفع</h2><div id="payList"></div></div>
+  <div id="scSec" class="hide"><h2>جدول الحصص</h2><div id="scList"></div></div>
+  <div id="rsSec" class="hide"><h2>نتائج وشهادات</h2><div class="gal" id="rsList"></div></div>
+  <div id="tSec" class="hide"><h2>آراء الطلاب وأولياء الأمور</h2><div id="tList"></div></div>
+  <div id="fSec"><h2>أسئلة شائعة</h2><div id="fList"></div></div>
+</div>
+<a class="wa" id="waBtn" href="#" target="_blank" rel="noopener">💬 اسأل على واتساب</a>
+
+<script>
+(function(){
+  /* ===== عدّل هنا ===== */
+  var NUMBER="201280706415"; /* 20 ثم الرقم من غير الصفر الأول */
+
+  /* الكورسات: أضف أو احذف سطر. price و start اختياريين، سيبهم "" لو مش عايز تظهرهم */
+  var COURSES=[
+    {name:"اللغة الفرنسية",label:"🇫🇷 الفرنسية",price:"",start:""},
+    {name:"اللغة الألمانية",label:"🇩🇪 الألمانية",price:"",start:""},
+    {name:"اللغة الإيطالية",label:"🇮🇹 الإيطالية",price:"",start:""},
+    {name:"الحساب الذهني (6 إلى 12 سنة)",label:"🧮 الحساب الذهني",price:"",start:""}
+  ];
+
+  /* المراحل الدراسية: عدّل الصفوف والمواد والمسارات حسب اللي بتدرّسه */
+  var STAGES=[
+    {name:"تأسيس",
+     grades:["رياض أطفال (KG)","تأسيس قراءة وكتابة","تأسيس قبل الصف الأول"],
+     subjects:["تأسيس لغة عربية","تأسيس لغة إنجليزية","تأسيس رياضيات","قراءة وكتابة","قرآن كريم"]},
+    {name:"ابتدائي",
+     grades:["الصف الأول","الصف الثاني","الصف الثالث","الصف الرابع","الصف الخامس","الصف السادس"],
+     subjects:["لغة عربية","لغة إنجليزية","رياضيات","علوم","دراسات اجتماعية","تربية دينية","حاسب آلي","لغة فرنسية","لغة ألمانية"]},
+    {name:"إعدادي",
+     grades:["الصف الأول الإعدادي","الصف الثاني الإعدادي","الصف الثالث الإعدادي"],
+     subjects:["لغة عربية","لغة إنجليزية","رياضيات","علوم","دراسات اجتماعية","تربية دينية","حاسب آلي","لغة فرنسية","لغة ألمانية","لغة إيطالية"]},
+    {name:"ثانوي عام",
+     grades:["الصف الأول الثانوي","الصف الثاني الثانوي","الصف الثالث الثانوي (ثانوية عامة)"],
+     subjects:["لغة عربية","لغة إنجليزية","لغة فرنسية","لغة ألمانية","لغة إيطالية","رياضيات","فيزياء","كيمياء","أحياء","جيولوجيا","تاريخ","جغرافيا","فلسفة ومنطق","علم نفس واجتماع"]},
+    {name:"البكالوريا المصرية",
+     grades:["الصف الأول الثانوي (تمهيدي)","الصف الثاني الثانوي","الصف الثالث الثانوي"],
+     tracks:["طب وعلوم حياتية","هندسة وعلوم الحاسب","أعمال","آداب وفنون"],
+     subjects:["لغة عربية","لغة إنجليزية","لغة أجنبية ثانية","رياضيات","فيزياء","كيمياء","أحياء","تاريخ","جغرافيا","اقتصاد وإحصاء","علوم الحاسب","تربية دينية"]},
+    {name:"ابتدائي أزهري",
+     grades:["الصف الأول","الصف الثاني","الصف الثالث","الصف الرابع","الصف الخامس","الصف السادس"],
+     subjects:["القرآن الكريم (حفظ وتلاوة)","تجويد","التوحيد","الفقه","الحديث","السيرة","لغة عربية (قراءة وإملاء)","نحو","خط","لغة إنجليزية","رياضيات","علوم","دراسات اجتماعية","حاسب آلي"]},
+    {name:"إعدادي أزهري",
+     grades:["الصف الأول الإعدادي","الصف الثاني الإعدادي","الصف الثالث الإعدادي"],
+     subjects:["القرآن الكريم (حفظ وتلاوة)","تجويد","التوحيد","الفقه","الحديث","التفسير","السيرة","نحو","صرف","بلاغة","أدب ونصوص","مطالعة","إملاء وتعبير","لغة إنجليزية","رياضيات","علوم","دراسات اجتماعية","حاسب آلي"]},
+    {name:"ثانوي أزهري",
+     grades:["الصف الأول الثانوي","الصف الثاني الثانوي","الصف الثالث الثانوي"],
+     tracks:["علمي","أدبي"],
+     subjects:["القرآن الكريم","تجويد","التوحيد","الفقه","الحديث","التفسير","نحو","صرف","بلاغة","أدب ونصوص","مطالعة وتعبير","تاريخ","جغرافيا","فلسفة ومنطق","لغة إنجليزية","لغة فرنسية","رياضيات","فيزياء","كيمياء","أحياء","جيولوجيا"]}
+  ];
+
+  var SPOTS=0; /* عدد الأماكن المتاحة، 0 يخفيها */
+
+  var WEB_TITLE="إزاي طفلك يتعلم أسرع وبتركيز أعلى";
+  var WEB_WHEN="يوم الجمعة الساعة 8 مساءً بتوقيت مصر";
+  var WEB_DATE="2026-11-13T20:00:00+02:00"; /* للعداد التنازلي، سيبه "" لو مش عايزه */
+
+  /* آراء حقيقية بس. مثال: {text:"الحصة كانت ممتعة",who:"أم محمد"}. الفاضي بيخفي القسم */
+  var TESTIMONIALS=[];
+
+  var FAQ=[
+    {q:"هل الحصة التجريبية مجانية فعلًا؟",a:"أيوه، الحصة التجريبية مجانية ومن غير أي التزام بعدها."},
+    {q:"الكورس أونلاين ولا حضوري؟",a:"الكورسات أونلاين، تقدر تحضر من البيت من الموبايل أو الكمبيوتر."},
+    {q:"مناسب لأي سن؟",a:"اللغات مناسبة لكل الأعمار والمستويات، والحساب الذهني للأطفال من 6 إلى 12 سنة."},
+    {q:"إزاي هعرف مدة الكورس وطريقة الدفع؟",a:"هنوضحلك كل التفاصيل على واتساب بعد ما تحجز حصتك التجريبية."}
+  ];
+  /* Meta Pixel لتتبع إعلانات فيسبوك: حط رقم البكسل بين العلامتين، أو سيبه "" */
+  var PIXEL_ID="";
+
+  /* سؤال "عرفتنا منين؟" */
+  var SOURCES=["فيسبوك","إنستجرام","واتساب","صديق أو قريب","جوجل","غير ذلك"];
+
+  /* الصفوف في خانة الصف الدراسي */
+  var GRADES_ALL=["تأسيس / رياض أطفال","ابتدائي","إعدادي","ثانوي","جامعي","موظف أو غير ذلك"];
+
+  /* ليه المجتهد؟ icon + text. سيب القائمة فاضية [] لإخفاء القسم */
+  var FEATURES=[
+    {icon:"🎧",text:"مناهج مبسطة وممتعة"},
+    {icon:"💬",text:"محادثة عملية من أول درس"},
+    {icon:"📖",text:"شرح مبسط لكل القواعد"},
+    {icon:"👨‍👩‍👧",text:"مناسب لجميع الأعمار والمستويات"},
+    {icon:"📡",text:"أونلاين من بيتك"},
+    {icon:"🎁",text:"حصة تجريبية مجانية"}
+  ];
+  /* الدفع: سيب القيمة "" لو مش عايز الطريقة دي. إنستا باي: رابط أو اسم مستخدم. فودافون كاش: رقم المحفظة */
+  var PAY_INSTAPAY="";
+  var PAY_CASH="";
+  var PAY_NOTE="الدفع بعد الحصة التجريبية. بعد التحويل ابعت صورة التحويل على واتساب.";
+  /* ولو معاك رابط دفع أونلاين لباقة معينة ضيفه في الباقة: {name:"شهري",price:"500 جنيه",details:"8 حصص",link:"https://..."} */
+
+  /* ألوان الشعار: لو عايز تطابق ألوان المجتهد حط أكواد الألوان، مثال {hero:"#1f5fbf",gold:"#f6c343",green:"#2e9e3e"} */
+  var BRAND={hero:"",gold:"",green:""};
+
+  /* رقم واتساب مختلف لكل كورس أو مرحلة. المفتاح هو اسم الكورس أو المرحلة بالظبط. مثال: {"اللغة الفرنسية":"201012345678"} */
+  var NUMBERS={};
+
+  /* فيديو تعريفي: حط كود فيديو يوتيوب فقط (الحروف بعد v= في اللينك)، أو "" */
+  var VIDEO_ID="";
+
+  /* المدرسين: {name:"أ. أحمد",subject:"اللغة الفرنسية",bio:"خبرة 10 سنوات"} */
+  var TEACHERS=[];
+
+  /* الباقات: {name:"شهري",price:"500 جنيه",details:"8 حصص"} */
+  var PACKAGES=[];
+
+  /* جدول الحصص: {course:"الفرنسية",days:"السبت والثلاثاء",time:"6 مساءً"} */
+  var SCHEDULE=[];
+
+  /* نتائج وشهادات: ارفع الصور في نفس المستودع واكتب أسماءها: {img:"result1.jpg",caption:"شهادة طالب"} */
+  var RESULTS=[];
+
+  /* اختبار تحديد المستوى: المفتاح اسم الكورس. a هو رقم الإجابة الصحيحة (يبدأ من 0) */
+  var LEVEL_TESTS={
+    "اللغة الفرنسية":[
+      {q:"كلمة Bonjour معناها؟",o:["مساء الخير","صباح الخير أو مرحبا","مع السلامة"],a:1},
+      {q:"كمّل: Je ___ étudiant.",o:["suis","es","est"],a:0},
+      {q:"معنى Il y a؟",o:["هو يذهب","يوجد","هو لديه"],a:1}
+    ],
+    "اللغة الألمانية":[
+      {q:"معنى Guten Morgen؟",o:["مساء الخير","صباح الخير","تصبح على خير"],a:1},
+      {q:"كمّل: Ich ___ Ahmed.",o:["bin","bist","ist"],a:0},
+      {q:"معنى Wie heißt du؟",o:["كم عمرك؟","ما اسمك؟","من أين أنت؟"],a:1}
+    ],
+    "اللغة الإيطالية":[
+      {q:"معنى Buongiorno؟",o:["صباح الخير أو نهارك سعيد","مساء الخير","مع السلامة"],a:0},
+      {q:"كمّل: Io ___ studente.",o:["sono","sei","è"],a:0},
+      {q:"معنى Come ti chiami؟",o:["كيف حالك؟","ما اسمك؟","أين تسكن؟"],a:1}
+    ]
+  };
+  /* ===== آخر التعديل ===== */
+
+  var $=function(id){return document.getElementById(id)};
+  var course="";
+
+  $("waBtn").href="https://wa.me/"+NUMBER+"?text="+encodeURIComponent("السلام عليكم، عندي سؤال عن الكورسات");
+  $("webTitle").textContent=WEB_TITLE;
+  $("webWhen").textContent="📅 "+WEB_WHEN;
+
+  if(SPOTS>0){$("spots").textContent="🔥 باقي "+SPOTS+" أماكن بس";$("spots").classList.remove("hide")}
+
+  var box=$("courses");
+  COURSES.forEach(function(c){
+    var b=document.createElement("button");
+    b.type="button";
+    b.appendChild(document.createTextNode(c.label));
+    if(c.price){var p=document.createElement("small");p.textContent=c.price;b.appendChild(p)}
+    if(c.start){var s=document.createElement("small");s.textContent="يبدأ "+c.start;b.appendChild(s)}
+    b.onclick=function(){
+      course=c.name;level="";$("lvBox").classList.add("hide");$("lvWrap").classList.toggle("hide",!LEVEL_TESTS[c.name]);
+      Array.prototype.forEach.call(box.children,function(x){x.classList.toggle("on",x===b)});
+    };
+    box.appendChild(b);
+  });
+
+  if(TESTIMONIALS.length){
+    $("tSec").classList.remove("hide");
+    TESTIMONIALS.forEach(function(t){
+      var d=document.createElement("div");d.className="t";
+      var p=document.createElement("p");p.textContent=t.text;
+      var w=document.createElement("span");w.textContent="— "+t.who;
+      d.appendChild(p);d.appendChild(w);$("tList").appendChild(d);
+    });
+  }
+  if(!FAQ.length)$("fSec").classList.add("hide");
+  FAQ.forEach(function(f){
+    var d=document.createElement("details");
+    var s=document.createElement("summary");s.textContent=f.q;
+    var p=document.createElement("p");p.textContent=f.a;
+    d.appendChild(s);d.appendChild(p);$("fList").appendChild(d);
+  });
+
+  var kind="lang",picked=[];
+  var kb=$("kind");
+  kb.onclick=function(e){
+    var b=e.target.closest("button");
+    if(!b)return;
+    kind=b.getAttribute("data-k");
+    Array.prototype.forEach.call(kb.children,function(x){x.classList.toggle("on",x===b)});
+    $("boxLang").classList.toggle("hide",kind!=="lang");
+    $("boxSchool").classList.toggle("hide",kind!=="school");
+    $("gradeWrap").classList.toggle("hide",kind==="school");
+  };
+  function fill(sel,arr){
+    sel.innerHTML="";
+    arr.forEach(function(t){var o=document.createElement("option");o.textContent=t;sel.appendChild(o)});
+  }
+  function stage(){return STAGES[$("stg").selectedIndex]||STAGES[0]}
+  function renderStage(){
+    var st=stage();
+    fill($("grd"),st.grades);
+    var has=st.tracks&&st.tracks.length;
+    $("trkWrap").classList.toggle("hide",!has);
+    if(has)fill($("trk"),st.tracks);
+    picked=[];
+    $("subs").innerHTML="";
+    st.subjects.forEach(function(name){
+      var b=document.createElement("button");
+      b.type="button";b.textContent=name;
+      b.onclick=function(){
+        var i=picked.indexOf(name);
+        if(i>-1)picked.splice(i,1);else picked.push(name);
+        b.classList.toggle("on",i===-1);
+      };
+      $("subs").appendChild(b);
+    });
+  }
+  fill($("stg"),STAGES.map(function(x){return x.name}));
+  $("stg").onchange=renderStage;
+  renderStage();
+
+  function fillSel(sel,arr,first){
+    sel.innerHTML="";
+    if(first){var o0=document.createElement("option");o0.value="";o0.textContent=first;sel.appendChild(o0)}
+    arr.forEach(function(t){var o=document.createElement("option");o.textContent=t;sel.appendChild(o)});
+  }
+  fillSel($("g1"),GRADES_ALL,"اختار");
+  fillSel($("src1"),SOURCES,"اختار");
+  fillSel($("src2"),SOURCES,"اختار");
+
+  if(FEATURES.length){
+    $("wSec").classList.remove("hide");
+    FEATURES.forEach(function(f){
+      var d=document.createElement("div");
+      var i=document.createElement("b");i.textContent=f.icon;
+      d.appendChild(i);d.appendChild(document.createTextNode(f.text));
+      $("wList").appendChild(d);
+    });
+  }
+
+  var sibCount=0;
+  $("addSib").onclick=function(){
+    sibCount++;
+    var row=document.createElement("div");row.className="sib";
+    var n=document.createElement("input");n.placeholder="اسم الأخ أو الأخت";n.setAttribute("data-s","n");
+    var a=document.createElement("input");a.type="number";a.inputMode="numeric";a.placeholder="السن";a.setAttribute("data-s","a");
+    row.appendChild(n);row.appendChild(a);$("sibs").appendChild(row);
+  };
+
+  $("shareBtn").onclick=function(){
+    var u=location.href.split("#")[0];
+    var t="حصة تجريبية مجانية وويبينار مجاني من المجتهد";
+    if(navigator.share){navigator.share({title:t,url:u}).catch(function(){})}
+    else{window.open("https://wa.me/?text="+encodeURIComponent(t+"\n"+u),"_blank")}
+  };
+
+  if(PIXEL_ID){
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init',PIXEL_ID);fbq('track','PageView');
+  }
+  function track(ev){if(window.fbq)fbq('track',ev)}
+
+  var root=document.documentElement;
+  if(BRAND.hero)root.style.setProperty("--hero",BRAND.hero);
+  if(BRAND.gold)root.style.setProperty("--gold",BRAND.gold);
+  if(BRAND.green)root.style.setProperty("--green",BRAND.green);
+
+  function card(parts,cls){
+    var d=document.createElement("div");d.className="t"+(cls?" "+cls:"");
+    parts.forEach(function(x){
+      if(!x.text)return;
+      var e=document.createElement(x.tag||"p");e.textContent=x.text;
+      if(x.bold)e.style.fontWeight="800";
+      d.appendChild(e);
+    });
+    return d;
+  }
+  if(VIDEO_ID){
+    $("vSec").classList.remove("hide");
+    var fr=document.createElement("iframe");
+    fr.src="https://www.youtube.com/embed/"+encodeURIComponent(VIDEO_ID);
+    fr.allowFullscreen=true;fr.loading="lazy";fr.title="فيديو تعريفي";
+    $("vBox").appendChild(fr);
+  }
+  if(TEACHERS.length){
+    $("thSec").classList.remove("hide");
+    TEACHERS.forEach(function(t){$("thList").appendChild(card([{text:"👨‍🏫 "+t.name,bold:true},{text:t.subject},{text:t.bio,tag:"span"}]))});
+  }
+  if(PACKAGES.length){
+    $("pkSec").classList.remove("hide");
+    PACKAGES.forEach(function(k){
+      var c=card([{text:k.name,bold:true},{text:k.price,bold:true},{text:k.details,tag:"span"}],"pk");
+      if(k.link&&/^https:\/\//.test(k.link)){
+        var a=document.createElement("a");a.className="paybtn";a.href=k.link;a.target="_blank";a.rel="noopener";a.textContent="ادفع الآن 💳";
+        c.appendChild(a);
+      }
+      $("pkList").appendChild(c);
+    });
+    var pk=$("pk1");pk.innerHTML="";
+    var o0=document.createElement("option");o0.value="";o0.textContent="اختار";pk.appendChild(o0);
+    PACKAGES.forEach(function(k){var o=document.createElement("option");o.textContent=k.name+(k.price?" - "+k.price:"");pk.appendChild(o)});
+    $("pkgWrap").classList.remove("hide");
+  }
+  if(SCHEDULE.length){
+    $("scSec").classList.remove("hide");
+    SCHEDULE.forEach(function(r){$("scList").appendChild(card([{text:r.course,bold:true},{text:"📅 "+r.days+(r.time?" • "+r.time:"")}]))});
+  }
+  if(RESULTS.length){
+    $("rsSec").classList.remove("hide");
+    RESULTS.forEach(function(r){var i=document.createElement("img");i.src=r.img;i.alt=r.caption||"نتيجة";i.loading="lazy";$("rsList").appendChild(i)});
+  }
+
+  function payRow(label,value){
+    var d=document.createElement("div");d.className="t";
+    var h=document.createElement("p");h.style.fontWeight="800";h.textContent=label;d.appendChild(h);
+    if(/^https:\/\//.test(value)){
+      var a=document.createElement("a");a.className="paybtn";a.href=value;a.target="_blank";a.rel="noopener";a.textContent="افتح رابط الدفع";d.appendChild(a);
+    }else{
+      var v=document.createElement("p");v.textContent=value;v.style.fontSize="20px";v.style.direction="ltr";v.style.textAlign="center";d.appendChild(v);
+      var b=document.createElement("button");b.type="button";b.className="paybtn";b.textContent="نسخ";
+      b.onclick=function(){
+        if(navigator.clipboard)navigator.clipboard.writeText(value).then(function(){b.textContent="اتنسخ ✅"}).catch(function(){});
+      };
+      d.appendChild(b);
+    }
+    $("payList").appendChild(d);
+  }
+  if(PAY_INSTAPAY||PAY_CASH){
+    $("paySec").classList.remove("hide");
+    if(PAY_INSTAPAY)payRow("💸 إنستا باي",PAY_INSTAPAY);
+    if(PAY_CASH)payRow("📱 فودافون كاش",PAY_CASH);
+    if(PAY_NOTE){var nt=document.createElement("p");nt.className="note";nt.textContent=PAY_NOTE;$("payList").appendChild(nt)}
+    var sent=document.createElement("button");sent.type="button";sent.className="share";sent.textContent="📤 أرسلت التحويل";
+    sent.onclick=function(){window.open("https://wa.me/"+NUMBER+"?text="+encodeURIComponent("السلام عليكم، أنا حولت المبلغ وده إيصال التحويل"),"_blank")};
+    $("payList").appendChild(sent);
+  }
+
+  var level="";
+  function renderTest(c){
+    var qs=LEVEL_TESTS[c],box=$("lvBox"),ans=[];
+    box.innerHTML="";level="";
+    qs.forEach(function(q,qi){
+      var h=document.createElement("p");h.style.fontWeight="700";h.textContent=(qi+1)+") "+q.q;box.appendChild(h);
+      var ch=document.createElement("div");ch.className="chips";
+      q.o.forEach(function(opt,oi){
+        var b=document.createElement("button");b.type="button";b.textContent=opt;
+        b.onclick=function(){ans[qi]=oi;Array.prototype.forEach.call(ch.children,function(x){x.classList.toggle("on",x===b)})};
+        ch.appendChild(b);
+      });
+      box.appendChild(ch);
+    });
+    var r=document.createElement("button");r.type="button";r.className="ghost";r.textContent="شوف مستواك";
+    var out=document.createElement("div");out.className="ok hide";
+    r.onclick=function(){
+      var sc=0;qs.forEach(function(q,i){if(ans[i]===q.a)sc++});
+      level=(sc<=1?"مبتدئ":sc===2?"متوسط":"جيد")+" ("+sc+"/"+qs.length+")";
+      out.textContent="مستواك المبدئي: "+level;out.classList.remove("hide");
+    };
+    box.appendChild(r);box.appendChild(out);
+  }
+  $("lvBtn").onclick=function(){
+    if(!course||!LEVEL_TESTS[course])return;
+    renderTest(course);$("lvBox").classList.remove("hide");
+  };
+
+  var EN={"مجاني 100%":"100% Free","احجز":"Book","مكانك":"your spot","مع المجتهد، تعلّم بسهولة":"Learn easily with Almujtahid","الأماكن محدودة، سجّل دلوقتي":"Limited spots, register now","🎁 حصة تجريبية":"🎁 Free trial","🎤 ويبينار مجاني":"🎤 Free webinar","🌍 لغات وحساب ذهني":"🌍 Languages & mental math","📚 مواد دراسية":"📚 School subjects","اختار الكورس":"Choose a course","المرحلة":"Stage","الصف":"Grade","المسار":"Track","المواد المطلوبة (تقدر تختار أكتر من مادة)":"Subjects (pick one or more)","اسم الطالب":"Student name","السن":"Age","الصف الدراسي (اختياري)":"School grade (optional)","رقم الواتساب":"WhatsApp number","أنسب وقت للحصة":"Best time for the session","صباحًا":"Morning","بعد الظهر":"Afternoon","مساءً":"Evening","أي وقت":"Any time","➕ أضف أخ أو أخت":"➕ Add a sibling","عرفتنا منين؟":"How did you hear about us?","كود خصم (اختياري)":"Discount code (optional)","الباقة المفضلة":"Preferred package","احجز حصتي المجانية 💬":"Book my free session 💬","سجّل في الويبينار 💬":"Register for the webinar 💬","الاسم":"Name","أنا":"I am","ولي أمر":"Parent","طالب":"Student","مهتم بتعلم لغة":"Interested in a language","اختار":"Choose","يوم":"Days","ساعة":"Hours","دقيقة":"Min","ثانية":"Sec","هتتحول لواتساب برسالة جاهزة بالبيانات، اضغط إرسال وهنأكد حجزك.":"You will be redirected to WhatsApp with a ready message. Press send and we will confirm.","📤 شارك الصفحة مع أصدقائك":"📤 Share this page","ليه المجتهد؟":"Why Almujtahid?","شوف الحصة":"Watch a session","المدرسين":"Our teachers","الباقات والأسعار":"Packages & prices","جدول الحصص":"Class schedule","طرق الدفع":"Payment methods","📤 أرسلت التحويل":"📤 I sent the transfer","ادفع الآن 💳":"Pay now 💳","نسخ":"Copy","نتائج وشهادات":"Results & certificates","آراء الطلاب وأولياء الأمور":"Student & parent reviews","أسئلة شائعة":"FAQ","💬 اسأل على واتساب":"💬 Ask on WhatsApp","📝 اختبار تحديد المستوى (اختياري)":"📝 Level test (optional)","الاسم بالكامل":"Full name","مثال: 10":"e.g. 10","لو معاك كود":"If you have a code","مناهج مبسطة وممتعة":"Simple, fun curriculum","محادثة عملية من أول درس":"Practical conversation from lesson one","شرح مبسط لكل القواعد":"Simple explanation of all rules","مناسب لجميع الأعمار والمستويات":"Suitable for all ages and levels","أونلاين من بيتك":"Online from home","حصة تجريبية مجانية":"Free trial session"};
+  var orig=new Map(),isEn=false;
+  function translate(toEn){
+    var w=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT),n,list=[];
+    while(n=w.nextNode())list.push(n);
+    list.forEach(function(n){
+      var t=n.nodeValue.trim();
+      if(!t)return;
+      if(toEn){if(EN[t]){orig.set(n,n.nodeValue);n.nodeValue=EN[t]}}
+      else if(orig.has(n)){n.nodeValue=orig.get(n);orig.delete(n)}
+    });
+    Array.prototype.forEach.call(document.querySelectorAll("[placeholder]"),function(el){
+      var ph=el.getAttribute("placeholder");
+      if(toEn){if(EN[ph]){el.setAttribute("data-ar",ph);el.setAttribute("placeholder",EN[ph])}}
+      else if(el.hasAttribute("data-ar")){el.setAttribute("placeholder",el.getAttribute("data-ar"));el.removeAttribute("data-ar")}
+    });
+    root.lang=toEn?"en":"ar";
+    root.dir=toEn?"ltr":"rtl";
+    $("langBtn").textContent=toEn?"عربي":"EN";
+  }
+  $("langBtn").onclick=function(){isEn=!isEn;translate(isEn)};
+
+  function show(w){
+    $("pTrial").classList.toggle("hide",w);
+    $("pWeb").classList.toggle("hide",!w);
+    $("tTrial").classList.toggle("on",!w);
+    $("tWeb").classList.toggle("on",w);
+  }
+  $("tTrial").onclick=function(){show(false)};
+  $("tWeb").onclick=function(){show(true)};
+
+  function tick(){
+    var left=new Date(WEB_DATE).getTime()-Date.now();
+    if(!WEB_DATE||isNaN(left)||left<=0){$("cd").classList.add("hide");return}
+    $("cd").classList.remove("hide");
+    var s=Math.floor(left/1000);
+    $("cd_d").textContent=Math.floor(s/86400);
+    $("cd_h").textContent=Math.floor(s%86400/3600);
+    $("cd_m").textContent=Math.floor(s%3600/60);
+    $("cd_s").textContent=s%60;
+  }
+  tick();
+  if(WEB_DATE)setInterval(tick,1000);
+
+  var okPhone=function(v){return /^[0-9٠-٩+\s]{10,15}$/.test(v)};
+  function go(msg,okId,num){
+    track("Lead");
+    window.open("https://wa.me/"+(num||NUMBER)+"?text="+encodeURIComponent(msg),"_blank");
+    $(okId).classList.remove("hide");
+  }
+
+  $("s1").onclick=function(){
+    var n=$("n1").value.trim(),a=$("a1").value.trim(),p=$("p1").value.trim(),e=$("e1"),what;
+    $("ok1").classList.add("hide");
+    if(kind==="lang"){
+      if(!course){e.textContent="اختار الكورس الأول";return}
+      what="كورس "+course;
+    }else{
+      if(!picked.length){e.textContent="اختار مادة واحدة على الأقل";return}
+      var st=stage();
+      what="مواد: "+picked.join("، ")+"\nالمرحلة: "+st.name+"\nالصف: "+$("grd").value+(st.tracks&&st.tracks.length?"\nالمسار: "+$("trk").value:"");
+    }
+    if(!n){e.textContent="اكتب اسم الطالب";return}
+    if(!a){e.textContent="اكتب السن";return}
+    if(!okPhone(p)){e.textContent="اكتب رقم واتساب صحيح";return}
+    e.textContent="";
+    var msg="السلام عليكم، عايز أحجز حصة تجريبية مجانية في "+what+"\nالاسم: "+n+"\nالسن: "+a;
+    if(kind==="lang"&&$("g1").value)msg+="\nالصف الدراسي: "+$("g1").value;
+    var rows=$("sibs").children;
+    for(var i=0;i<rows.length;i++){
+      var sn=rows[i].querySelector('[data-s="n"]').value.trim(),sa=rows[i].querySelector('[data-s="a"]').value.trim();
+      if(sn)msg+="\nأخ أو أخت: "+sn+(sa?" ("+sa+" سنة)":"");
+    }
+    msg+="\nرقم الواتساب: "+p+"\nأنسب وقت: "+$("t1").value;
+    if($("cp").value.trim())msg+="\nكود الخصم: "+$("cp").value.trim();
+    if(PACKAGES.length&&$("pk1").value)msg+="\nالباقة المفضلة: "+$("pk1").value;
+    if(kind==="lang"&&level)msg+="\nالمستوى المبدئي (اختبار سريع): "+level;
+    if($("src1").value)msg+="\nعرفنا من: "+$("src1").value;
+    go(msg,"ok1",NUMBERS[kind==="lang"?course:stage().name]);
+  };
+  $("s2").onclick=function(){
+    var n=$("n2").value.trim(),p=$("p2").value.trim(),e=$("e2");
+    $("ok2").classList.add("hide");
+    if(!n){e.textContent="اكتب اسمك";return}
+    if(!okPhone(p)){e.textContent="اكتب رقم واتساب صحيح";return}
+    e.textContent="";
+    var msg="السلام عليكم، عايز أسجل في الويبينار المجاني ("+WEB_TITLE+")\nالاسم: "+n+"\nرقم الواتساب: "+p+"\nأنا: "+$("w2").value;
+    if($("src2").value)msg+="\nعرفنا من: "+$("src2").value;
+    go(msg,"ok2");
+  };
+})();
+</script>
+</body>
+</html>
